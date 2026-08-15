@@ -1,0 +1,14 @@
+{
+    "registered":[
+        {
+            "name":"trackUser",
+            "password":"trackPassword"
+        }
+    ],
+    "notRegistered":[
+        {
+            "name":"unRegisteredUser01",
+            "password":"unregisteredPassword01"
+        }
+    ]
+}

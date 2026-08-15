@@ -1,0 +1,20 @@
+{
+    "registered":[
+        {
+            "name":"Student01",
+            "rollNo":"101",
+            "semester":"6",
+            "section":"CSE-3",
+            "college":"JKL college of engineering and technology"
+        }
+    ],
+    "notRegistered":[
+        {
+            "name":"Student01",
+            "rollNo":"001",
+            "semester":"6",
+            "section":"CSE-3",
+            "college":"JKL college of engineering and technology"
+        }
+    ]
+}
