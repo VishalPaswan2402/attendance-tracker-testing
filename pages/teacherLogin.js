@@ -16,7 +16,7 @@ class TeachersLogin {
         this.failText='Password or username is incorrect';
         this.validateLoginForm="form.was-validated";
     };
-    async LoginToTeacher(){
+    async loginToTeacher(){
         await this.page.goto(this.applicationUrl);
         await this.page.waitForLoadState('networkidle');
         await this.page.click(this.teacherLoginButton);

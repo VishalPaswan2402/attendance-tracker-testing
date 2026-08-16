@@ -5,7 +5,7 @@ test.describe("Teacher login verification",()=>{
     const applicationUrl="https://attendance-tracker-4j6u.onrender.com/"
     test("Successfull login",async({page})=>{
         const teacherLogin=new TeachersLogin(page,applicationUrl);
-        await teacherLogin.LoginToTeacher();
+        await teacherLogin.loginToTeacher();
     });
     test("Login without registered",async({page})=>{
         const teacherLogin=new TeachersLogin(page,applicationUrl);
