@@ -51,7 +51,8 @@ class AddRemoveUpdateStudent {
             if (totalStudents > 2) {
                 await this.page.locator(this.viewEditStudentIcon).nth(2).click();
                 await expect(this.page).toHaveTitle("Attendance-Tracker Student-Edit");
-                await this.page.fill(this.studentName, "Balvindar");
+                const randomValue=Math.floor((Math.random)*100)
+                await this.page.fill(this.studentName, "Balvindar"+randomValue.toString());
                 const num = Math.round(Math.random());
                 await this.page.locator(this.markAttendance).selectOption({ value: num == 1 ? "Present" : "Absent" });
                 await this.page.waitForTimeout(3000);
@@ -91,6 +92,7 @@ class AddRemoveUpdateStudent {
             await expect(this.page.locator(this.addNewStudentButton)).toBeVisible();
             const beforeAdd=await this.page.locator(this.viewEditStudentIcon).count();
             await this.page.locator(this.addNewStudentButton).click();
+            await this.page.waitForLoadState('networkidle');
             const rollNum=Math.floor(Math.random()*1000);
             await this.page.locator(this.studentName).fill("Bunny"+rollNum.toString());
             await this.page.locator(this.studentRollNo).fill(rollNum.toString());
