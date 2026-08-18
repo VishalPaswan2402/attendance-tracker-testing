@@ -1,26 +1,26 @@
 import { test } from "@playwright/test";
-import TeachersLogin from "../../pages/teacherLogin";
+import TeachersLogin from "../../pages/teacher/loginLogout/teacherLogin";
 
-test.describe("Teacher login verification",()=>{
-    const applicationUrl="https://attendance-tracker-4j6u.onrender.com/"
-    test("Successfull login",async({page})=>{
-        const teacherLogin=new TeachersLogin(page,applicationUrl);
+test.describe("Teacher login verification", () => {
+    const applicationUrl = "https://attendance-tracker-4j6u.onrender.com/"
+    test("Successfull login", async ({ page }) => {
+        const teacherLogin = new TeachersLogin(page, applicationUrl);
         await teacherLogin.loginToTeacher();
     });
-    test("Login without registered",async({page})=>{
-        const teacherLogin=new TeachersLogin(page,applicationUrl);
+    test("Login without registered", async ({ page }) => {
+        const teacherLogin = new TeachersLogin(page, applicationUrl);
         await teacherLogin.loginWithoutRegister();
     });
-    test("Empty username and password",async({page})=>{
-        const teacherLogin=new TeachersLogin(page,applicationUrl);
+    test("Empty username and password", async ({ page }) => {
+        const teacherLogin = new TeachersLogin(page, applicationUrl);
         await teacherLogin.emptyUsernameAndPassword();
     });
-    test("Empty username",async({page})=>{
-        const teacherLogin=new TeachersLogin(page,applicationUrl);
+    test("Empty username", async ({ page }) => {
+        const teacherLogin = new TeachersLogin(page, applicationUrl);
         await teacherLogin.emptyUsernameOnly();
     });
-    test("Empty password",async({page})=>{
-        const teacherLogin=new TeachersLogin(page,applicationUrl);
+    test("Empty password", async ({ page }) => {
+        const teacherLogin = new TeachersLogin(page, applicationUrl);
         await teacherLogin.emptyPasswordOnly();
     })
 })
